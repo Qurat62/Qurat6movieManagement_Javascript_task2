@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+     
+  <head> 
+		
+		<link rel="stylesheet" href="style.css" /> 
+		
+		<meta charset="UTF-8" /> 
+		<meta name="viewport"
+      content="width=device-width, initial-scale=1.0" /> 
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/newApp.js"></script>
+		<title>Document</title> 
+	</head> 
+
+<body onload="fetchDataFromApi();">   
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">VisionX</label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </nav>
+    
+
+    <!--main-->
+
+<main>
+       
+        <div class="grid-container-section-1">
+
+            <div class="grid-item">
+                <img alt="" src="images/poster.jpg">
+            </div>
+        </div>
+      
+
+        <div class="grid-container-addMovie-Form-section-2">
+          <button class="button-color-purple productButtonStyle"  id="myBtn" onclick="window.location.href='AddEdit.html'" ><i class="fa fa-plus-circle" style="font-size:30px;color:white"> Add New Movie</i></button>
+		 
+		</div>
+		
+       
+<!-- table -->
+
+        <div class="grid-container-moviesList-section-3 red-border">
+           
+            <div class="heading">
+                <h1>Movies List</h1>
+            </div>
+            <table class="purple-border">
+				 <thead>
+					 <tr>
+						 <th style="display: none;">ID</th>
+						 <th>Title</th>
+						 <th>Release Date</th>
+						 <th>Actions</th>
+					 </tr>
+				 </thead>
+				 <tbody id="moviesList">
+					 
+				 </tbody>
+            </table>
+
+        </div>
+	
+
+</main>
+   
+<footer class="footer-section red-border"><small>© 2020 VisionX, Inc. All rights reserved.</small></footer>
+
+</body>
+
+</html>

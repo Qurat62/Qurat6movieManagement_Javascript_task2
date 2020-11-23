@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+     
+  <head> 		
+	<link rel="stylesheet" href="style.css" /> 
+		<meta charset="UTF-8" /> 
+		<meta name="viewport"
+      content="width=device-width, initial-scale=1.0" /> 
+	  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	  <script src="js/newApp.js"></script> 
+	  <script src="js/AddEdit.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+		<title>Document</title> 
+	</head> 
+
+<body>  
+	<script>
+	
+	</script> 
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">VisionX</label>
+        <ul>
+            <li><a class="active" href="Home.html">Home</a></li>
+            <li><a href="Detail.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </nav>
+    
+
+    <!--main-->
+
+<main> 
+        <div class="grid-container-section-1">
+            <div class="grid-item red-border">
+                <img alt="" src="images/poster_a.jpg">
+            </div>
+        </div>
+
+<!-- The Form -->
+
+
+	  <div class="grid-container-addMovie-Form-section-2">
+		<form  method="POST"  id="movie-Form" type='submit'>
+			<div class="grid-container-Form">
+				<div class="row">
+					<div class="grid-col-25">
+					</div>
+					<div class="grid-col-75">
+						<h2>Add New Movie</h2>
+						<br>
+					</div>		
+				</div>
+			  <div class="row">
+				  <div class="grid-col-25">
+					<label for="ID"><b>ID</b></label>
+				  </div>
+				  <div class="grid-col-75">
+					<input type="text" placeholder="Enter ID" name="ID" id="movie-id" pattern="[0-9]*" maxlength="4">
+				  </div>
+	
+			  </div>
+	
+			  <div class="row">
+				<div class="grid-col-25">
+					<label for="title"><b>Title</b></label>
+				</div>
+				<div class="grid-col-75">
+					<input type="text" placeholder="Enter Title" name="title" id="movie-title"  maxlength="50">
+				</div>
+	
+			</div>
+	
+			<div class="row">
+				<div class="grid-col-25">
+					<label for="release-date"><b>Release Date</b></label>
+				</div>
+				<div class="grid-col-75">
+					<input type="text" placeholder="Enter Release Date" name="release-date" id="movie-releaseDate" pattern="[0-9]*" maxlength="4">
+				</div>
+	
+			</div>
+	
+			<div class="row">
+				<div class="grid-col-25">
+					<label for="producer"><b>Producer</b></label>
+					
+				   
+				</div>
+				<div class="grid-col-75">
+					<input type="text" placeholder="Enter Producer" name="producer" id="movie-producer" >
+				</div>
+	
+			</div>
+	
+			<div class="row">
+				<div class="grid-col-25">
+					<label for="director"><b>Director</b></label>
+				</div>
+				<div class="grid-col-75">
+					<input type="text" placeholder="Enter Director" name="director" id="movie-director" >
+				</div>
+	
+			</div>
+	
+			<div class="row">
+				<div class="grid-col-25">
+					<label for="description"><b>Description</b></label>
+					
+				</div>
+				<div class="grid-col-75">
+					<textarea  id="movie-description" name="subject" placeholder="Enter Description.." rows="5" cols="50" ></textarea>
+				</div>
+	
+			</div>
+			<div class="row">
+				<div class="grid-col-25">
+	
+				</div>
+				<div class="grid-col-75 ">
+          <br>
+					<button type="submit" class="productButtonStyle button-color-green" id="saveBtn" >Save</button>
+					
+					
+					<button onClick="updateMovie()" class="productButtonStyle button-color-green"  id="updBtn">Update</button>
+				</div>
+	
+			</div>
+  
+			</div>
+		</form>
+		
+	  </div>
+	 
+</div>
+  
+
+<div class="grid-container-section-1 red-border">
+	<div class="grid-item">
+		<img alt="" src="images/poster_b.jpg">
+	</div>
+</div>
+
+
+</main>
+   
+<footer class="footer-section red-border"><small>© 2020 VisionX, Inc. All rights reserved.</small></footer>
+
+</body>
+
+</html>
