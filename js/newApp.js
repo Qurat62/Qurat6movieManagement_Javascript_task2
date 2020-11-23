@@ -14,30 +14,25 @@ const api_url = "https://ghibliapi.herokuapp.com/films";
 // Defining async function 
 //use try catch, if response is null throw error box
 
-function fetchDataFromApi() {
-  debugger;
-  // var returnObjName= JSON.parse(localStorage.getItem('movies'));
-  // if(returnObjName && Object.keys(returnObjName).length > 0){
-  //  const display=displayMovie();
-  // }else{
-    fetch(api_url)
-    .then(async (response) => {
-      // Storing data in form of JSON 
-      const data = await response.json();
-      if (data!=null)
-        {      
-          saveMovieDataFromApi(data); 
-        }
-      else
-      { 
-        alert(" Ooops! Link down :( , Cant fetch the data");
-      }
-    }).catch((err) => {
-       console.log(err);
-    });
+fetchMoviesFromApi=()=> {
+
+  //response from the api
+  if (localStorage.getItem("movies") == null ||localStorage.getItem("movies") == undefined  || JSON.parse(localStorage.getItem('movies')).length == 0) 
+  {
+    fetch(apiUrl)
+      .then((response) => {
+         response.json().then(response=>{
+        localStorage.setItem('movies',JSON.stringify(response));
+        displayMovie();
+         });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }else if(JSON.parse(localStorage.getItem('movies')).length >= 0){
+    displayMovie();
   }
-//}
- 
+}
 
 // Movie class: Represent a movie
 class Movie{
@@ -128,7 +123,7 @@ function detailOfMovie(movie_Id)
 
 function displayMovie()
 {
-  debugger;
+
 const movies=getMovies();
 movies.forEach((movie) => addMovieToList(movie));
 }

@@ -7,11 +7,10 @@
             var id=url.searchParams.get("id");
             
             const movies=getMovies();
-            console.log(movies);
+            
             for (const key of Object.keys(movies)) {
              if(movies[key].id===id){
-               /// saveBtnDisplay();
-               // document.getElementById("updBtn").style.visibility = "visible";
+                
                 document.querySelector('#movie-id').disabled=true;
                 document.querySelector('#movie-id').value=movies[key].id;
                 document.querySelector('#movie-title').value=movies[key].title;
@@ -23,7 +22,7 @@
                
             }
             else{
-            
+                
                 document.getElementById('saveBtn').onclick=saveNewMovie;
                
             }
@@ -53,12 +52,21 @@
     }
     else
     {
-      const movies=getMovies();
+        debugger;
+      const movies=getMovies();    
+     
       for (const key of Object.keys(movies)) {  
-       if(movies[key].id===movie.id){
-        localStorage.setItem('movies', JSON.stringify(movie)); 
-         alert("Movie updated successfully");
+        
+      if(movies[key].id===movie.id)
+      {
+    movies[key].title=movie.title;
+    movies[key].release_date=movie.release_date;
+    movies[key].director=movie.director;
+    movies[key].producer=movie.producer;
+    movies[key].description=movie.description;
 
+        localStorage.setItem('movies', JSON.stringify(movies)); 
+         alert("Movie updated successfully");
         window.location.href = "Home.html";
        }
     }
@@ -85,7 +93,7 @@ function saveNewMovie()
     else
     {
         const movies=getMovies();
-        movies.push(movie);        
+        movies.unshift(movie);        
         localStorage.setItem('movies',JSON.stringify(movies));
         //show successs msg
         alert("Movie saved successfully");  
@@ -97,10 +105,3 @@ function saveNewMovie()
 }
 
 
-function updateBtnDisplay() {
-    document.getElementById("updBtn").style.visibility = "hidden";
-  }
-  
-//   function saveBtnDisplay() {
-//     document.getElementById("saveBtn").style.visibility = "hidden";
-//   } 
